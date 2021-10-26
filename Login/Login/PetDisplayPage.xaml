@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.PetDisplayPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="PetList" Text="Pet List" HorizontalOptions="Center"></Label>
+            <Image Source="emergency_vet.png"/>
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid Padding="10" RowDefinitions="Auto, 20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding PetID}" FontSize="Medium"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding PetName}" FontSize="Medium"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding PetType}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding OwnerName}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding PhoneNumber}" TextColor="Silver" FontSize="Small"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

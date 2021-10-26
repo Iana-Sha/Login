@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.VetRegistrationPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+    VerticalOptions="Center">
+            <Label Text="Welcome to Vet Registration!"
+                FontSize="Large"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <Image Source="emergency_vet.png"/>
+            <Entry x:Name="txtVetID"
+                 Placeholder="Vet ID"
+                 FontSize="Large"
+                 />
+            <Entry x:Name="txtName"
+                 Placeholder="Name"
+                 FontSize="Large"
+                 />
+            <Entry x:Name="txtLastName"
+                Placeholder="Last Name"
+                FontSize="Large"
+                />
+            <Entry x:Name="txtEmail"
+                Placeholder="Email"
+                FontSize="Large"
+                />
+            <Entry x:Name="txtPhoneNumber"
+                Placeholder="Phone Number"
+                FontSize="Large"
+                />
+            <Entry x:Name="txtSpecialization"
+                Placeholder="Specialization"
+                FontSize="Large"
+                />
+
+            <Button x:Name="btnCreate"
+                Text="Register Vet"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="btnCreate_Clicked"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
