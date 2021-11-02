@@ -11,7 +11,9 @@ namespace Login
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+        
         public string userName;
+        [Unique]
         public string Username 
         {
             get => userName;
@@ -38,6 +40,8 @@ namespace Login
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+        public string Type { get; set; }
+        public int PermissionId { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         void OnPropertyChanged(string name)

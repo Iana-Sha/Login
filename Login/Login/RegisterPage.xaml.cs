@@ -12,15 +12,18 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
+        public Permission perm;
         public RegisterPage()
         {
             InitializeComponent();
+            perm = new Permission(false, false, false);           
         }
 
         private async void btnCreate_Clicked(object sender, EventArgs e)
         {
-            
-            if( txtPassword.Text == null || txtPassword.Text.Length < 10)
+            await App.DatabasePermission.SavePermissionAsync(perm);
+            Permission permission = await App.DatabasePermission.getLastInseted();
+            if ( txtPassword.Text == null || txtPassword.Text.Length < 10)
             {
                 await DisplayAlert("Password has to be longer than 10 charcters", "Failure", "OK");
                 return;
@@ -31,7 +34,7 @@ namespace Login
             string lastName = txtPassword.Text;
             string phoneNumber = txtUserName.Text;
             string email = txtUserName.Text;
-
+            
             await App.DatabaseUser.SaveUserAsync(new User
             {
                 Username = username,
@@ -39,7 +42,9 @@ namespace Login
                 FirstName = firstName,
                 LastName = lastName,
                 PhoneNumber = phoneNumber,
-                Email = email
+                Email = email,
+                Type = "viewer",
+                PermissionId = permission.PermissionId
             }) ;
 
             await Navigation.PushAsync(new LoginPage());

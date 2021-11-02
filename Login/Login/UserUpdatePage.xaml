@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.UserUpdatePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Modify User Permissions"
+                FontSize="Large"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <Image Source="emergency_vet.png"/>
+            <Label Text="Type"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontSize="Large"/>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox x:Name="internalCB" Margin="0" Grid.Row="0" Grid.Column="0" CheckedChanged="internalCB_CheckedChanged"/>
+                <Label x:Name="internal" Padding="0,5,0,0"  Text="internal" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+
+            </Grid>
+
+            <Label Text="Permissions"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontSize="Large"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox x:Name="modifyCB" Margin="0" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="modify" Padding="0,5,0,0"  Text="modify" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+
+                <CheckBox x:Name="seeCB" Margin="0" Grid.Row="1" Grid.Column="0"/>
+                <Label x:Name="see" Padding="0,5,0,0"  Text="see" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+
+                <CheckBox x:Name="deleteCB" Margin="0" Grid.Row="2" Grid.Column="0"/>
+                <Label x:Name="delete" Padding="0,5,0,0"  Text="delete" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+
+            </Grid>
+
+            <Button x:Name="Update"
+                Text="Update"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="Update_Clicked"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

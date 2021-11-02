@@ -33,6 +33,12 @@
                 BackgroundColor="LightBlue"
                 Clicked="btnDisplayPets_Clicked"
                 />
+            <Button x:Name="btnDisplayUsers"
+                Text="Display all users"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="btnDisplayUsers_Clicked"
+                />
             <Button x:Name="btnLogout"
                 Text="Logout"
                 Font="large"

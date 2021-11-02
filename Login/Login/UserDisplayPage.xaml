@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.UserDisplayPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="PetList" Text="Pet List" HorizontalOptions="Center"></Label>
+            <Image Source="emergency_vet.png"/>
+            <CollectionView x:Name="collectionView" ItemsSource="{Binding User}" SelectionChanged="collectionView_SelectionChanged" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid Padding="10" RowDefinitions="Auto, 20" ColumnDefinitions="Auto">
+                              
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ID}" FontSize="Medium"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Username}" FontSize="Medium"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Password}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding FirstName}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding LastName}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="5" Text="{Binding PhoneNumber}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="6" Text="{Binding Email}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="7" Text="{Binding Type}" TextColor="Silver" FontSize="Small"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button x:Name="updateBtn"
+                Text="Update User Permissionsr"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="updateBtn_Clicked"
+                />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

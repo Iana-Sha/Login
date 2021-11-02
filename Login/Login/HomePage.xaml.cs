@@ -12,9 +12,27 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
-        public HomePage()
+        private User userSelected = new User();
+
+        public HomePage(User user)
         {
             InitializeComponent();
+            userSelected = user;
+            if(userSelected.Type.Equals("viewer"))
+            {
+                btnDisplayUsers.IsVisible = false;
+                btnDisplayVets.IsVisible = false;
+                btnDisplayVets.IsVisible = false;
+                btnRegisterVet.IsVisible = false;
+            }
+            else if(userSelected.GetUserName.Equals("admin"))
+            {
+
+            }
+            else if(userSelected.Type.Equals("internal"))
+            {
+                btnDisplayUsers.IsVisible = false;
+            }
         }
 
         private async void btnRegisterVet_Clicked(object sender, EventArgs e)
@@ -30,6 +48,11 @@ namespace Login
         private async void btnDisplayVets_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VetsDisplayPage());
+
+        }
+        private async void btnDisplayUsers_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserDisplayPage());
 
         }
 

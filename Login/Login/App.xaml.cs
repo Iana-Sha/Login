@@ -49,6 +49,20 @@ namespace Login
                 return databaseVet;
             }
         }
+        static DBPermission databasePermission;
+        public static DBPermission DatabasePermission
+        {
+            get
+            {
+                if (databasePermission == null)
+                {
+                    databasePermission = new DBPermission
+                        (Path.Combine(Environment.GetFolderPath
+                        (Environment.SpecialFolder.LocalApplicationData), "permission.db3"));
+                }
+                return databasePermission;
+            }
+        }
 
         public App()
         {

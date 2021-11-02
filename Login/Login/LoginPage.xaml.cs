@@ -12,6 +12,7 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        private User user = new User();
         public LoginPage()
         {
             InitializeComponent();
@@ -36,11 +37,11 @@ namespace Login
             }
             String userName = txtUserName.Text;
             String PassWord = txtPassword.Text;
-            var user = await App.DatabaseUser.GetItemAsync(userName, PassWord);
+            user = await App.DatabaseUser.GetUserAsync(userName, PassWord);
             if (user != null)
             {
                 await DisplayAlert("Login result", "Success", "OK");
-                await Navigation.PushAsync(new HomePage());
+                await Navigation.PushAsync(new HomePage(user));
             }
             else
             {
