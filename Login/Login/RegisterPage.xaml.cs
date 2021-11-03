@@ -16,14 +16,14 @@ namespace Login
         public RegisterPage()
         {
             InitializeComponent();
-            perm = new Permission(false, false, false);           
+            perm = new Permission(false, false, false);     
         }
 
         private async void btnCreate_Clicked(object sender, EventArgs e)
         {
-            await App.DatabasePermission.SavePermissionAsync(perm);
-            Permission permission = await App.DatabasePermission.getLastInseted();
-            if ( txtPassword.Text == null || txtPassword.Text.Length < 10)
+            perm = await App.DatabasePermission.SavePermissionAsync(perm);
+
+            if (txtPassword.Text == null || txtPassword.Text.Length < 10)
             {
                 await DisplayAlert("Password has to be longer than 10 charcters", "Failure", "OK");
                 return;
@@ -44,7 +44,7 @@ namespace Login
                 PhoneNumber = phoneNumber,
                 Email = email,
                 Type = "viewer",
-                PermissionId = permission.PermissionId
+                PermissionId = perm.Id
             }) ;
 
             await Navigation.PushAsync(new LoginPage());

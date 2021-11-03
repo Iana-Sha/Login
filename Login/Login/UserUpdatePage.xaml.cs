@@ -59,7 +59,7 @@ namespace Login
         private async void getPermissions()
         {
             Permission temp = await App.DatabasePermission.GetPermissionAsync(userSelected.PermissionId);
-            permission.PermissionId = temp.PermissionId;
+            permission.Id = temp.Id;
             permission.modify = temp.modify;
             permission.see = temp.see;
             permission.delete = temp.delete;
@@ -72,15 +72,18 @@ namespace Login
                 modifyCB.IsEnabled = true;
                 seeCB.IsEnabled = true;
                 deleteCB.IsEnabled = true;
+                modifyCB.IsChecked = true;
+                seeCB.IsChecked = true;
+                deleteCB.IsChecked = true;
             }
             else
             {
                 modifyCB.IsEnabled = false;
                 seeCB.IsEnabled = false;
                 deleteCB.IsEnabled = false;
-                modifyCB.IsEnabled = false;
-                seeCB.IsEnabled = false;
-                deleteCB.IsEnabled = false;
+                modifyCB.IsChecked = false;
+                seeCB.IsChecked = false;
+                deleteCB.IsChecked = false;
             }
         }
     }

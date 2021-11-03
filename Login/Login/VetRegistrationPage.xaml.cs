@@ -12,9 +12,12 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VetRegistrationPage : ContentPage
     {
-        public VetRegistrationPage()
+        private User userSelected = new User();
+        public VetRegistrationPage(User user)
         {
             InitializeComponent();
+            userSelected = user;
+
         }
 
         private async void btnCreate_Clicked(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace Login
                 Specialization = specialization
             });
 
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new HomePage(userSelected));
         }
     }
 }

@@ -18,16 +18,15 @@ namespace Login
         {
             InitializeComponent();
             userSelected = user;
-            if(userSelected.Type.Equals("viewer"))
+            if (userSelected.Username.Equals("admin"))         
+            {
+               
+            }
+            else if (userSelected.Type.Equals("viewer"))
             {
                 btnDisplayUsers.IsVisible = false;
-                btnDisplayVets.IsVisible = false;
-                btnDisplayVets.IsVisible = false;
+                btnDisplayPets.IsVisible = false;
                 btnRegisterVet.IsVisible = false;
-            }
-            else if(userSelected.GetUserName.Equals("admin"))
-            {
-
             }
             else if(userSelected.Type.Equals("internal"))
             {
@@ -37,12 +36,12 @@ namespace Login
 
         private async void btnRegisterVet_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new VetRegistrationPage());
+            await Navigation.PushAsync(new VetRegistrationPage(userSelected));
         }
 
         private async void btnRegisterPet_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PetRegistrationPage());
+            await Navigation.PushAsync(new PetRegistrationPage(userSelected));
         }
 
         private async void btnDisplayVets_Clicked(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace Login
 
         private async void btnDisplayPets_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PetDisplayPage());
+            await Navigation.PushAsync(new PetDisplayPage(userSelected));
 
         }
         private async void btnLogout_Clicked(object sender, EventArgs e)
