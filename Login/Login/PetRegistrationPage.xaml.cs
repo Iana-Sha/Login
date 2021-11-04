@@ -12,9 +12,11 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PetRegistrationPage : ContentPage
     {
-        public PetRegistrationPage()
+        private User userSelected = new User();
+        public PetRegistrationPage(User user)
         {
             InitializeComponent();
+            userSelected = user;
         }
 
         private async void btnCreate_Clicked(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace Login
                 PhoneNumber = phoneNumber,
             });
 
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new HomePage(userSelected));
         }
     }
 }

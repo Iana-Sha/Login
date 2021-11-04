@@ -9,7 +9,7 @@ namespace Login
     public class Permission
     {
         [PrimaryKey, AutoIncrement]
-        public int PermissionId { get; set; }
+        public int Id { get; set; }
         public bool? modify { get; set; }
         public bool? see { get; set; }
         public bool? delete { get; set; }
@@ -27,7 +27,7 @@ namespace Login
 
         public Permission(int permissionId, bool modify, bool see, bool delete)
         {
-            PermissionId = permissionId;
+            Id = permissionId;
             this.modify = modify;
             this.see = see;
             this.delete = delete;

@@ -49,5 +49,19 @@ namespace Login
         {
             user = (User)e.CurrentSelection[0];
         }
+
+        private async void deleteBtn_Clicked(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("Attentions!", "Are you sure you want to delete user: " + user.Username, "Yes", "No");
+            if(answer)
+            {
+                await App.DatabaseUser.DeleteItemAsync(user);
+                await Navigation.PushAsync(new UserDisplayPage());
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

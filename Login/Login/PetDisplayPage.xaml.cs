@@ -12,13 +12,16 @@ namespace Login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PetDisplayPage : ContentPage
     {
-        public PetDisplayPage()
+        private User userSelected = new User();
+        public PetDisplayPage(User user)
         {
             InitializeComponent();
+            userSelected = user;
             DisplayPets();
         }
         public async void DisplayPets()
         {
+
             var x = await App.DatabasePet.GetPetAsync();
             if (x.Count == 0)
             {

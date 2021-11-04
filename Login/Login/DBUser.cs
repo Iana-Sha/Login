@@ -48,9 +48,12 @@ namespace Login
         }
 
 
-        public Task<int> DeleteItemAsync(User user)
+        public async Task<int> DeleteItemAsync(User user)
         {
-            return _database.DeleteAsync(user);
+            Permission permission = await App.DatabasePermission.GetPermissionAsync(user.ID);
+            await App.DatabasePermission.DeleteItemAsync(permission);
+            await _database.DeleteAsync(user);
+            return user.ID;
         }
     }
 }

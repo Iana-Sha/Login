@@ -32,6 +32,12 @@
                 BackgroundColor="LightBlue"
                 Clicked="updateBtn_Clicked"
                 />
+            <Button x:Name="deleteBtn"
+                Text="Delete User"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="deleteBtn_Clicked"
+                />
 
         </StackLayout>
     </ContentPage.Content>
