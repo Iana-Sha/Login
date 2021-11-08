@@ -5,11 +5,11 @@
     <ContentPage.Content>
         <StackLayout Padding="20"
     VerticalOptions="Center">
-            <Label Text="Welcome to Pet Registeration!"
+            <Label x:Name="lbl" Text="Welcome to Pet Registeration!"
                 FontSize="Large"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Image Source="emergency_vet.png"/>
+            <Image x:Name="MyImage" Source="emergency_vet.png"/>
             
             <Entry x:Name="txtPetID"
                  Placeholder="Pet ID"
@@ -27,8 +27,13 @@
                 Placeholder="Owner Name"
                 FontSize="Large"
                 />
-            
-            
+            <Button x:Name="btnUpload"
+                Text="Upload Image"
+                Font="large"
+                BackgroundColor="LightBlue"
+                Clicked="btnUpload_Clicked"
+                />
+
             <Button x:Name="btnCreate"
                 Text="Register Pet"
                 Font="large"

@@ -16,7 +16,7 @@ namespace Login
             _database.CreateTableAsync<Owner>().Wait();
         }
 
-        public Task<List<Owner>> GetOwnerAsync()
+        public Task<List<Owner>> GetOwnersAsync()
         {
             return
             _database.Table<Owner>().ToListAsync();

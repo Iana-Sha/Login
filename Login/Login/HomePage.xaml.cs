@@ -41,7 +41,26 @@ namespace Login
 
         private async void btnRegisterPet_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PetRegistrationPage(userSelected));
+            Owner owner = await App.DatabaseOwner.GetOwnerAsync(userSelected);
+            List<Pet> listPet = new List<Pet>();
+            if (owner != null) 
+            {
+                listPet = await App.DatabasePet.GetPetByOwnerIdAsync(owner);
+            }
+            if (owner == null)
+            {
+                bool answer = await DisplayAlert("Missing information", "Would you like to add information and become an owner?", "Yes", "No");
+                if(answer)
+                    await Navigation.PushAsync(new OwnerRegistrationPage(userSelected));
+            }
+            else if(listPet.Count == 2)
+            {
+                await DisplayAlert("Sorry you reached the limit of pets you can add", "Failure", "OK");
+            }
+            else
+            {
+                await Navigation.PushAsync(new PetRegistrationPage(userSelected));
+            }
         }
 
         private async void btnDisplayVets_Clicked(object sender, EventArgs e)

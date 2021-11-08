@@ -17,8 +17,11 @@ namespace Login
         }
         public Task<List<Pet>> GetPetAsync()
         {
-            return
-            _database.Table<Pet>().ToListAsync();
+            return _database.Table<Pet>().ToListAsync();
+        }
+        public Task<List<Pet>> GetPetByOwnerIdAsync(Owner owner)
+        {
+            return _database.Table<Pet>().Where(pet => pet.OwnerId == owner.ID).ToListAsync();
         }
 
         public Task<int> SavePetAsync(Pet pet)

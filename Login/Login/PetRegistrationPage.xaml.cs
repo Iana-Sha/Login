@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,16 +24,22 @@ namespace Login
             int petID = int.Parse(txtPetID.Text);
             string petName = txtPetName.Text;
             string petType = txtPetType.Text;
-            string ownerName = txtOwnerName.Text;
+            Owner owner = await App.DatabaseOwner.GetOwnerAsync(userSelected);
+            int ownerId = owner.ID;
 
             await App.DatabasePet.SavePetAsync(new Pet
             {
                 PetID = petID,
                 PetName = petName,
                 PetType = petType,
+                OwnerId = ownerId
             });
 
             await Navigation.PushAsync(new HomePage(userSelected));
+        }
+        private async void btnUpload_Clicked(object sender, EventArgs e)
+        {
+           
         }
     }
 }

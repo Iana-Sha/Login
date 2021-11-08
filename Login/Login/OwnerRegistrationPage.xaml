@@ -6,11 +6,9 @@
         <StackLayout Padding="20" VerticalOptions="Center">
             <Label Text="Please Register!" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Image Source="emergency_vet.png"/>
-            <Entry x:Name="txtFirstName" Placeholder="First Name" FontSize="Large"  />
-            <Entry x:Name="txtLastName"  Placeholder="Last Name"  FontSize="Large" />
-            <Entry x:Name="txtAddress"  Placeholder="Last Name"  FontSize="Large" />
-            <Entry x:Name="txtEmail"  Placeholder="Email" FontSize="Large" />
-            <Button x:Name="btnCreate" Text="Register" Font="large" BackgroundColor="LightBlue" Clicked="btnCreate_Clicked"/>
+            <Entry x:Name="txtAddress"  Placeholder="Address"  FontSize="Large" />
+            <Entry x:Name="txtPhoneNumber"  Placeholder="Phone Number" FontSize="Large" />
+            <Button x:Name="btnCreate" Text="Register As Owner" Font="large" BackgroundColor="LightBlue" Clicked="btnCreate_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

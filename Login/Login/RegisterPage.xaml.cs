@@ -21,31 +21,38 @@ namespace Login
 
         private async void btnCreate_Clicked(object sender, EventArgs e)
         {
-            perm = await App.DatabasePermission.SavePermissionAsync(perm);
-
-            if (txtPassword.Text == null || txtPassword.Text.Length < 10)
+            try
             {
-                await DisplayAlert("Password has to be longer than 10 charcters", "Failure", "OK");
-                return;
+                perm = await App.DatabasePermission.SavePermissionAsync(perm);
+
+                if (txtPassword.Text == null || txtPassword.Text.Length < 10)
+                {
+                    await DisplayAlert("Password has to be longer than 10 charcters", "Failure", "OK");
+                    return;
+                }
+                string username = txtUserName.Text;
+                string password = txtPassword.Text;
+                string firstName = txtUserName.Text;
+                string lastName = txtPassword.Text;
+                string email = txtUserName.Text;
+
+                await App.DatabaseUser.SaveUserAsync(new User
+                {
+                    Username = username,
+                    Password = password,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Email = email,
+                    Type = "viewer",
+                    PermissionId = perm.Id
+                });
+
+                await Navigation.PushAsync(new LoginPage());
             }
-            string username = txtUserName.Text;
-            string password = txtPassword.Text;
-            string firstName = txtUserName.Text;
-            string lastName = txtPassword.Text;
-            string email = txtUserName.Text;
-            
-            await App.DatabaseUser.SaveUserAsync(new User
+            catch(SQLite.SQLiteException ex)
             {
-                Username = username,
-                Password = password,
-                FirstName = firstName,
-                LastName = lastName,
-                Email = email,
-                Type = "viewer",
-                PermissionId = perm.Id
-            }) ;
-
-            await Navigation.PushAsync(new LoginPage());
+                await DisplayAlert("Faliure", "User with userName already exists", "OK");
+            }
         }
     }
 }
