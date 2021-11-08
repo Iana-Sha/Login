@@ -25,15 +25,12 @@ namespace Login
             string petName = txtPetName.Text;
             string petType = txtPetType.Text;
             string ownerName = txtOwnerName.Text;
-            string phoneNumber = txtPhoneNumber.Text;
 
             await App.DatabasePet.SavePetAsync(new Pet
             {
                 PetID = petID,
                 PetName = petName,
                 PetType = petType,
-                OwnerName = ownerName,
-                PhoneNumber = phoneNumber,
             });
 
             await Navigation.PushAsync(new HomePage(userSelected));

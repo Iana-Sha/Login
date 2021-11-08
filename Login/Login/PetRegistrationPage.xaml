@@ -27,10 +27,7 @@
                 Placeholder="Owner Name"
                 FontSize="Large"
                 />
-            <Entry x:Name="txtPhoneNumber"
-                Placeholder="Phone Number"
-                FontSize="Large"
-                />
+            
             
             <Button x:Name="btnCreate"
                 Text="Register Pet"

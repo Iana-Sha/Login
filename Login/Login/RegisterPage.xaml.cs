@@ -32,7 +32,6 @@ namespace Login
             string password = txtPassword.Text;
             string firstName = txtUserName.Text;
             string lastName = txtPassword.Text;
-            string phoneNumber = txtUserName.Text;
             string email = txtUserName.Text;
             
             await App.DatabaseUser.SaveUserAsync(new User
@@ -41,7 +40,6 @@ namespace Login
                 Password = password,
                 FirstName = firstName,
                 LastName = lastName,
-                PhoneNumber = phoneNumber,
                 Email = email,
                 Type = "viewer",
                 PermissionId = perm.Id
