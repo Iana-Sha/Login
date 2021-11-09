@@ -29,7 +29,8 @@ namespace Login
             }
             else
             {
-                 collectionView.ItemsSource = await App.DatabasePet.GetPetAsync();                   
+                 collectionView.ItemsSource = await App.DatabasePet.GetPetAsync();       
+                
             }
         }
 

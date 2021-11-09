@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
+using System.IO.IsolatedStorage;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace Login
@@ -16,5 +15,19 @@ namespace Login
         {
             InitializeComponent();
         }
+        public void Initializer()
+        {
+            string[] filePaths = Directory.GetFiles("drawable/", "*.jpg");
+
+        }
+
+        //void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+        //{
+        //    var imageSender = (Image)sender;
+        //    // watch the monkey go from color to black&white!
+
+             
+        //        imageSender.Source = "tapped_bw.jpg";
+        //}
     }
 }
