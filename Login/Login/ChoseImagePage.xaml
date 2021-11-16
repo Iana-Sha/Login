@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.ChoseImagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <CollectionView x:Name="collectionView" ItemsSource="{Binding ImageNames}" SelectionChanged="collectionView_SelectionChanged" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid Padding="10" RowDefinitions="Auto" ColumnDefinitions="Auto">
+                                    <Image Source="{Binding ImageName}">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" NumberOfTapsRequired="2" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+            <Button Text="Go Back" x:Name="GoBack" Clicked="GoBack_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

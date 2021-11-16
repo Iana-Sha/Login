@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.EditUserPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="Username" Grid.Row="0" Grid.Column="1"  FontSize="Medium"/>
+            <Entry x:Name="Password" Grid.Row="0" Grid.Column="2"  FontSize="Medium"/>
+            <Entry x:Name="FirstName" Grid.Row="0" Grid.Column="3"  FontSize="Medium"/>
+            <Entry x:Name="LastName" Grid.Row="0" Grid.Column="4"  FontSize="Medium"/>
+            <Entry x:Name="Email" Grid.Row="0" Grid.Column="5"  FontSize="Medium"/>
+            <Entry x:Name="Address" Grid.Row="0" Grid.Column="6"  FontSize="Medium"/>
+            <Entry x:Name="PhoneNumber" Grid.Row="0" Grid.Column="7"  FontSize="Medium"/>
+            <Button x:Name="btnUpdate" Text="Update Info" Font="large" BackgroundColor="LightBlue" Clicked="btnUpdate_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

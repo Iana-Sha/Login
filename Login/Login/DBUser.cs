@@ -55,5 +55,6 @@ namespace Login
             await _database.DeleteAsync(user);
             return user.ID;
         }
+
     }
 }

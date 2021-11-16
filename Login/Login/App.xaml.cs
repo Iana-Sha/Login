@@ -63,6 +63,20 @@ namespace Login
                 return databasePermission;
             }
         }
+        static DBOwner databaseOwner;
+        public static DBOwner DatabaseOwner
+        {
+            get
+            {
+                if (databaseOwner == null)
+                {
+                    databaseOwner = new DBOwner
+                        (Path.Combine(Environment.GetFolderPath
+                        (Environment.SpecialFolder.LocalApplicationData), "owner.db3"));
+                }
+                return databaseOwner;
+            }
+        }
 
         public App()
         {

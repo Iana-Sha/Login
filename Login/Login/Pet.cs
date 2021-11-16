@@ -12,7 +12,7 @@ namespace Login
         public int PetID { get; set; }
         public string PetName { get; set; }
         public string PetType { get; set; }
-        public string OwnerName { get; set; } 
-        public string PhoneNumber { get; set; }
+        public int OwnerId { get; set; }
+        public string image { get; set; }
     }
 }

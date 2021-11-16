@@ -6,7 +6,7 @@
         <StackLayout>
             <Label x:Name="PetList" Text="Pet List" HorizontalOptions="Center"></Label>
             <Image Source="emergency_vet.png"/>
-            <CollectionView x:Name="collectionView">
+            <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -22,12 +22,16 @@
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding PetName}" FontSize="Medium"/>
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding PetType}" TextColor="Silver" FontSize="Small"/>
                                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding OwnerName}" TextColor="Silver" FontSize="Small"/>
-                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding PhoneNumber}" TextColor="Silver" FontSize="Small"/>
+                                <Image>
+                                    <Image.Source>
+                                        <FileImageSource File="{Binding image}" />
+                                    </Image.Source>                                </Image>
                             </Grid>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button x:Name="Update" Text="Update" Font="large" BackgroundColor="LightBlue" Clicked="Update_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

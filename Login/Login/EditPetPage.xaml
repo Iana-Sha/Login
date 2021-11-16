@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Login.PetRegistrationPage">
+             x:Class="Login.EditPetPage">
     <ContentPage.Content>
-        <StackLayout Padding="20"
-    VerticalOptions="Center">
-            <Label x:Name="lbl" Text="Welcome to Pet Registeration!"
+        <StackLayout>
+            <Label x:Name="lbl" Text="Welcome to Pet Edit!"
                 FontSize="Large"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
             <Image x:Name="MyImage" Source="emergency_vet.png"/>
-            
+
             <Entry x:Name="txtPetID"
                  Placeholder="Pet ID"
                  FontSize="Large"
@@ -23,20 +22,20 @@
                 Placeholder="Pet Type"
                 FontSize="Large"
                 />
-      
+
             <Label x:Name="ImageName" Text="Image: " FontSize="Large"></Label>
-            
+
             <Button x:Name="btnUpload"
                 Text="Chose Image"
                 Font="large"
                 BackgroundColor="LightBlue"
                 Clicked="btnUpload_Clicked"
                 />
-            <Button x:Name="btnCreate"
-                Text="Register Pet"
+            <Button x:Name="btnUpdate"
+                Text="Update Pet"
                 Font="large"
                 BackgroundColor="LightBlue"
-                Clicked="btnCreate_Clicked"
+                Clicked="btnUpdate_Clicked"
                 />
         </StackLayout>
     </ContentPage.Content>

@@ -2,49 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Login.HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="EditToolBarItem" Text="Edit" Clicked="EditToolBarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Image Source="emergency_vet.png"/>
-            <Label Text="Choose what to do next"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    FontSize="Large"/>
-            <Button x:Name="btnRegisterVet"
-                Text="Register Vet"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnRegisterVet_Clicked"
-                />
-            <Button x:Name="btnRegisterPet"
-                Text="Register Pet"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnRegisterPet_Clicked"
-                />
-            <Button x:Name="btnDisplayVets"
-                Text="Display all vets"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnDisplayVets_Clicked"
-                />
-            <Button x:Name="btnDisplayPets"
-                Text="Display all pets"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnDisplayPets_Clicked"
-                />
-            <Button x:Name="btnDisplayUsers"
-                Text="Display all users"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnDisplayUsers_Clicked"
-                />
-            <Button x:Name="btnLogout"
-                Text="Logout"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnLogout_Clicked"
-                />
+            <Label Text="Choose what to do next" VerticalOptions="Center"  HorizontalOptions="Center" FontSize="Large"/>
+            <Button x:Name="btnRegisterVet" Text="Register Vet" Font="large" BackgroundColor="LightBlue" Clicked="btnRegisterVet_Clicked"/>
+            <Button x:Name="btnRegisterPet" Text="Register Pet" Font="large" BackgroundColor="LightBlue" Clicked="btnRegisterPet_Clicked"/>
+            <Button x:Name="btnDisplayVets" Text="Display all vets"  Font="large" BackgroundColor="LightBlue" Clicked="btnDisplayVets_Clicked"/>
+            <Button x:Name="btnDisplayPets" Text="Display all pets"  Font="large" BackgroundColor="LightBlue" Clicked="btnDisplayPets_Clicked"/>
+            <Button x:Name="btnDisplayUsers" Text="Display all users" Font="large"  BackgroundColor="LightBlue" Clicked="btnDisplayUsers_Clicked"/>
+            <Button x:Name="btnLogout" Text="Logout" Font="large" BackgroundColor="LightBlue" Clicked="btnLogout_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

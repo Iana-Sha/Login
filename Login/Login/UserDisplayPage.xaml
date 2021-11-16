@@ -17,7 +17,6 @@
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding Password}" TextColor="Silver" FontSize="Small"/>
                                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding FirstName}" TextColor="Silver" FontSize="Small"/>
                                 <Label Grid.Row="0" Grid.Column="4" Text="{Binding LastName}" TextColor="Silver" FontSize="Small"/>
-                                <Label Grid.Row="0" Grid.Column="5" Text="{Binding PhoneNumber}" TextColor="Silver" FontSize="Small"/>
                                 <Label Grid.Row="0" Grid.Column="6" Text="{Binding Email}" TextColor="Silver" FontSize="Small"/>
                                 <Label Grid.Row="0" Grid.Column="7" Text="{Binding Type}" TextColor="Silver" FontSize="Small"/>
                             </Grid>
