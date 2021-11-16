@@ -25,7 +25,6 @@ namespace Login
             else if (userSelected.Type.Equals("viewer"))
             {
                 btnDisplayUsers.IsVisible = false;
-                btnDisplayPets.IsVisible = false;
                 btnRegisterVet.IsVisible = false;
             }
             else if(userSelected.Type.Equals("internal"))
@@ -66,23 +65,24 @@ namespace Login
         private async void btnDisplayVets_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VetsDisplayPage());
-
         }
         private async void btnDisplayUsers_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserDisplayPage());
-
         }
 
         private async void btnDisplayPets_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PetDisplayPage(userSelected));
-
         }
         private async void btnLogout_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
+        }
 
+        private async void EditToolBarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditUserPage(userSelected));
         }
     }
 }

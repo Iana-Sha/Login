@@ -13,6 +13,7 @@ namespace Login
     public partial class PetDisplayPage : ContentPage
     {
         private User userSelected = new User();
+        private Pet petSelected = new Pet();
         public PetDisplayPage(User user)
         {
             InitializeComponent();
@@ -21,19 +22,51 @@ namespace Login
         }
         public async void DisplayPets()
         {
-
-            var x = await App.DatabasePet.GetPetAsync();
-            if (x.Count == 0)
+            Owner owner = new Owner();
+            try
             {
-                await DisplayAlert("Alert", "Databse is empty", "OK");
+                owner = await App.DatabaseOwner.GetOwnerAsync(userSelected);
+            }
+            catch (Exception e)
+            {
+
+            }
+            if (owner != null)
+            {
+                List<Pet> petList = await App.DatabasePet.GetPetByOwnerIdAsync(owner);
+
+                if (petList.Count == 0)
+                {
+                    await DisplayAlert("Alert", "Databse is empty", "OK");
+                }
+                else
+                {
+                    collectionView.ItemsSource = petList;
+                }
             }
             else
             {
-                 collectionView.ItemsSource = await App.DatabasePet.GetPetAsync();       
-                
+                var x = await App.DatabasePet.GetPetAsync();
+                if (x.Count == 0)
+                {
+                    await DisplayAlert("Alert", "Databse is empty", "OK");
+                }
+                else
+                {
+                    collectionView.ItemsSource = await App.DatabasePet.GetPetAsync();
+                }
             }
         }
+        private async void Update_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditPetPage(petSelected,userSelected));
 
+        }
+
+        private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+             petSelected = (Pet)e.CurrentSelection[0];
+        }
     }
 
 }
