@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Login.HomePage">
     <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="WelcomeBackUser" Text="" ></ToolbarItem>
         <ToolbarItem x:Name="EditToolBarItem" Text="Edit" Clicked="EditToolBarItem_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>

@@ -25,5 +25,21 @@ namespace Login
         {
             return _database.InsertAsync(vet);
         }
+        public Task<int> UpdateVetAsync(Vet vet)
+        {
+            if (vet.ID != 0)
+            {
+                return _database.UpdateAsync(vet);
+            }
+            else
+            {
+                return _database.InsertAsync(vet);
+            }
+        }
+        public async Task<int> DeleteItemAsync(Vet vet)
+        {
+            await _database.DeleteAsync(vet);
+            return vet.ID;
+        }
     }
 }

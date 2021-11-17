@@ -40,7 +40,6 @@ namespace Login
             user = await App.DatabaseUser.GetUserAsync(userName, PassWord);
             if (user != null)
             {
-                await DisplayAlert("Login result", "Success", "OK");
                 await Navigation.PushAsync(new HomePage(user));
             }
             else

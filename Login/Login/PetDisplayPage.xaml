@@ -25,7 +25,8 @@
                                 <Image>
                                     <Image.Source>
                                         <FileImageSource File="{Binding image}" />
-                                    </Image.Source>                                </Image>
+                                    </Image.Source>
+                                </Image>
                             </Grid>
                         </StackLayout>
                     </DataTemplate>

@@ -22,6 +22,8 @@ namespace Login
         }
         public async void DisplayPets()
         {
+            if(userSelected.Username.Equals("admin"))
+                Update.IsVisible = false;
             Owner owner = new Owner();
             try
             {
@@ -60,7 +62,6 @@ namespace Login
         private async void Update_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditPetPage(petSelected,userSelected));
-
         }
 
         private void collectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
