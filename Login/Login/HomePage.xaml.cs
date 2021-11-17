@@ -31,6 +31,7 @@ namespace Login
             {
                 btnDisplayUsers.IsVisible = false;
             }
+            WelcomeBackUser.Text = "Welcome back " + userSelected.Username + "!";
         }
 
         private async void btnRegisterVet_Clicked(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace Login
 
         private async void btnDisplayVets_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new VetsDisplayPage());
+            await Navigation.PushAsync(new VetsDisplayPage(userSelected));
         }
         private async void btnDisplayUsers_Clicked(object sender, EventArgs e)
         {

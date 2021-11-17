@@ -6,7 +6,7 @@
         <StackLayout>
             <Label x:Name="VetList" Text="Vet List" HorizontalOptions="Center"></Label>
             <Image Source="emergency_vet.png"/>
-            <CollectionView x:Name="collectionView">
+            <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -30,6 +30,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button x:Name="Update" Text="Update" Font="large" BackgroundColor="LightBlue" Clicked="Update_Clicked"/>
+            <Button x:Name="Delete" Text="Delete" Font="large" BackgroundColor="LightBlue" Clicked="Delete_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Login.EditVetPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbl" Text="Welcome to Pet Edit!" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Image x:Name="MyImage" Source="emergency_vet.png"/>
+
+            <Entry x:Name="txtVetID" Placeholder="Vet ID" FontSize="Large"/>
+            <Entry x:Name="txtName" Placeholder="Name" FontSize="Large"/>
+            <Entry x:Name="txtLastName" Placeholder="Last Name" FontSize="Large"/>
+            <Entry x:Name="txtEmail" Placeholder="Email" FontSize="Large"/>
+            <Entry x:Name="txtPhoneNumber" Placeholder="PhoneNumber" FontSize="Large"/>
+            <Entry x:Name="txtSpecialization" Placeholder="Specialization" FontSize="Large"/>
+
+            <Button x:Name="btnUpdate" Text="Update Vet" Font="large" BackgroundColor="LightBlue" Clicked="btnUpdate_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

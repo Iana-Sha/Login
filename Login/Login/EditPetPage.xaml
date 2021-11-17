@@ -4,39 +4,17 @@
              x:Class="Login.EditPetPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lbl" Text="Welcome to Pet Edit!"
-                FontSize="Large"
-                VerticalOptions="Center"
-                HorizontalOptions="Center" />
+            <Label x:Name="lbl" Text="Welcome to Pet Edit!" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
             <Image x:Name="MyImage" Source="emergency_vet.png"/>
 
-            <Entry x:Name="txtPetID"
-                 Placeholder="Pet ID"
-                 FontSize="Large"
-                 />
-            <Entry x:Name="txtPetName"
-                 Placeholder="Pet Name"
-                 FontSize="Large"
-                 />
-            <Entry x:Name="txtPetType"
-                Placeholder="Pet Type"
-                FontSize="Large"
-                />
+            <Entry x:Name="txtPetID" Placeholder="Pet ID" FontSize="Large"/>
+            <Entry x:Name="txtPetName" Placeholder="Pet Name" FontSize="Large"/>
+            <Entry x:Name="txtPetType" Placeholder="Pet Type" FontSize="Large"/>
 
             <Label x:Name="ImageName" Text="Image: " FontSize="Large"></Label>
 
-            <Button x:Name="btnUpload"
-                Text="Chose Image"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnUpload_Clicked"
-                />
-            <Button x:Name="btnUpdate"
-                Text="Update Pet"
-                Font="large"
-                BackgroundColor="LightBlue"
-                Clicked="btnUpdate_Clicked"
-                />
+            <Button x:Name="btnUpload" Text="Chose Image" Font="large" BackgroundColor="LightBlue" Clicked="btnUpload_Clicked"/>
+            <Button x:Name="btnUpdate" Text="Update Pet" Font="large" BackgroundColor="LightBlue" Clicked="btnUpdate_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
